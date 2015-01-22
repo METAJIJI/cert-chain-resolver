@@ -43,7 +43,7 @@ while true; do
   fi
 
   # download issuer's certificate, convert from DER to PEM
-  CURRENT_CERT=$(curl -s $PARENT_URL | openssl x509 -inform der)
+  CURRENT_CERT=$(wget -O - $PARENT_URL | openssl x509 -inform der)
 
   I=$((I+1))
 done
